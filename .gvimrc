@@ -6,7 +6,7 @@ set showmode     " Show current mode
 set visualbell   " No sound
 set hidden       " Allow buffers to be hidden
                  " without writing to the disk
-set textwidth=80 " Hard wrap at 80 characters
+"set textwidth=80 " Hard wrap at 80 characters
 
 syntax on        " Turn on syntax highlighting
 
@@ -39,8 +39,6 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'https://github.com/morhetz/gruvbox'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'overcache/NeoSolarized'
-
 call plug#end()
 
 colorscheme gruvbox
@@ -63,6 +61,7 @@ nmap <F5> :!g++ --std=c++14 -Wall -o %:r.exe %<cr>
 nmap <F6> :!%:r.exe<cr>
 nmap <F9> :!python %<cr>
 nmap <F2> :w<cr>
+nmap <F3> :r D:\CodeTesting\template.cpp<cr>  "update with template location
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
