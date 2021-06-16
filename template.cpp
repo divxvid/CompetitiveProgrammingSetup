@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
-using namespace std ;
+#define all(x) x.begin(), x.end()
 
-typedef long long ll ;
+using namespace std ;
 
 void __print(int x) {cerr << x;}
 void __print(long x) {cerr << x;}
@@ -30,8 +30,16 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define debug(x...)
 #endif
 
+typedef long long ll ;
+typedef vector<int> vi ;
+typedef vector<pair<int, int>> vpii ;
+typedef vector<vector<int>> vvi ;
+typedef pair<int, int> pii ;
+typedef vector<ll> vl ;
+typedef vector<vector<ll>> vvl ;
+typedef pair<ll, ll> pll ;
+
 void solve() {
-    
 }
 
 int main() {
@@ -47,3 +55,4 @@ int main() {
 
     return 0 ;
 }
+
