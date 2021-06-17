@@ -10,7 +10,6 @@ set hidden       " Allow buffers to be hidden
 
 syntax on        " Turn on syntax highlighting
 
-
 set autoindent
 set smartindent
 set smarttab
@@ -32,18 +31,18 @@ set linebreak " Wrap lines when convenient
 :nmap k gk
 
 call plug#begin('~/.vim/plugged')
-
-Plug 'https://github.com/joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'drewtempelmeyer/palenight.vim'
 Plug 'https://github.com/morhetz/gruvbox'
-Plug 'KeitaNakamura/neodark.vim'
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'https://github.com/herrbischoff/cobalt2.vim'
+Plug 'https://github.com/SirVer/ultisnips'
 call plug#end()
 
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme cobalt2
 "set guifont=Fantasque\ Sans\ Mono\ Regular:h13
-set guifont=Fira\ Code\ SemiBold:h13
+"set guifont=Fira\ Code\ SemiBold:h13
+set guifont=Cascadia\ Code\ SemiBold:h14
 set background=dark
 
 "Below two lines will enable font ligatures.
@@ -57,11 +56,12 @@ set directory=$TMP
 set undodir=$TMP
 "set noundofile
 
-nmap <F5> :!g++ --std=c++14 -Wall -o %:r.exe %<cr>
+nmap <F5> :!g++ --std=c++17 -Wall -o %:r.exe %<cr>
 nmap <F6> :!%:r.exe<cr>
 nmap <F9> :!python %<cr>
 nmap <F2> :w<cr>
-nmap <F3> :r D:\CodeTesting\template.cpp<cr>  "update with template location
+nmap <F3> :r D:\Coding\template.cpp<cr>  "update with template location
+nmap <F4> :!python D:\Coding\CompetitiveProgrammingSetup\CompetitiveCompanion\competitive_run.py<cr>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
