@@ -5,25 +5,23 @@ import subprocess
 if __name__ == '__main__':
     folder_path = os.getcwd()
 
-    if "solution.exe" not in os.listdir():
-        try:
-            subprocess.run(["g++", "-std=c++17", "-Wall", "-o", "solution.exe", "solution.cpp"],
-                           check=True)
-            print("compilation successful !")
-        except:
-            print("Compilation failed !")
-            exit(0)
-    else:
-        print("Using existing Binary. Recompile if needed.\n")
+    try:
+        subprocess.run(["g++", "-std=c++17", "-Wall", "-o", "solution.exe", "solution.cpp"],
+                       check=True)
+        print("compilation successful !")
+    except:
+        print("Compilation failed !")
+        exit(0)
 
     files = os.listdir()
-    input_files = [x for x in files if x[:5] == "input"]
+    input_files = [x for x in files if x.strip()[:5] == "input"]
     good = True
     for fname in input_files:
         suffix = fname[5:]
         correct_file = "correct"+suffix
         output_file = "output"+suffix
-        cmd = f"solution.exe <{fname} >{output_file}"
+        error_file = "error"+suffix
+        cmd = f"solution.exe <{fname} >{output_file} 2>{error_file}"
         os.system(cmd)
         cf = open(correct_file, "r")
         of = open(output_file, "r")
@@ -41,6 +39,9 @@ if __name__ == '__main__':
             print("Your output : ")
             print("".join(outputs))
             good = False
+            print("\nError/Debug Statements:")
+            with open(error_file, "r") as f:
+                print(f.read())
         else:
             print(fname, "OK !")
 
