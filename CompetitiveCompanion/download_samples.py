@@ -1,7 +1,7 @@
 from flask import Flask, request, json
 import os
 
-TEMPLATE_LOCATION = r"D:\CompetitiveProgramming\CompetitiveProgrammingSetup\template.cpp"
+TEMPLATE_LOCATION = r"D:\Coding\CompetitiveProgrammingSetup\template.cpp"
 app = Flask("Competitive Listener")
 
 @app.route("/", methods=["POST"])

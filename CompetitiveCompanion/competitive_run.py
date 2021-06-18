@@ -21,13 +21,20 @@ if __name__ == '__main__':
         correct_file = "correct"+suffix
         output_file = "output"+suffix
         error_file = "error"+suffix
+
         cmd = f"solution.exe <{fname} >{output_file} 2>{error_file}"
         os.system(cmd)
-        cf = open(correct_file, "r")
-        of = open(output_file, "r")
 
-        correct = cf.read().strip()
+        of = open(output_file, "r")
         outputs = of.read().strip()
+        try:
+            cf = open(correct_file, "r")
+            correct = cf.read().strip()
+        except:
+            print("Your output : ")
+            print("".join(outputs))
+            of.close()
+            continue
 
         cf.close()
         of.close()
