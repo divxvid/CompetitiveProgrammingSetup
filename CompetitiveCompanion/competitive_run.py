@@ -41,6 +41,9 @@ if __name__ == '__main__':
 
         if correct != outputs:
             print("\nWA on input file", fname)
+            print("Input given : ")
+            with open(fname, "r") as f:
+                print(f.read())
             print("\nCorrect output : ")
             print("".join(correct))
             print("Your output : ")
