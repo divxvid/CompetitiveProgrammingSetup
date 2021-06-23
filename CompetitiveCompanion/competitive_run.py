@@ -33,13 +33,13 @@ if __name__ == '__main__':
         os.system(cmd)
 
         of = open(output_file, "r")
-        outputs = of.read().strip().split()
+        outputs = list(map(lambda x : x.strip(), of.read().split('\n')))
         try:
             cf = open(correct_file, "r")
-            correct = cf.read().strip().split()
+            correct = list(map(lambda x : x.strip(), cf.read().split('\n')))
         except:
             print_("Your output : ")
-            print_("".join(outputs))
+            print_("\n".join(outputs))
             of.close()
             continue
 
@@ -52,9 +52,9 @@ if __name__ == '__main__':
             with open(fname, "r") as f:
                 print_(f.read())
             print_("\nCorrect output : ")
-            print_("".join(correct))
+            print_("\n".join(correct))
             print_("Your output : ")
-            print_("".join(outputs))
+            print_("\n".join(outputs))
             good = False
             print_("\nError/Debug Statements:")
             with open(error_file, "r") as f:
