@@ -2,15 +2,22 @@ from sys import argv
 import os
 import subprocess
 
+run_op = open("run_info.txt", "w")
+
+def print_(*args):
+    print(" ".join(args))
+    run_op.write("".join(map(str, args))+"\n")
+
 if __name__ == '__main__':
     folder_path = os.getcwd()
 
     try:
         subprocess.run(["g++", "-std=c++17", "-Wall", "-o", "solution.exe", "solution.cpp"],
                        check=True)
-        print("compilation successful !")
+        print_("compilation successful !")
     except:
-        print("Compilation failed !")
+        print_("Compilation failed !")
+        run_op.close()
         exit(0)
 
     files = os.listdir()
@@ -26,13 +33,13 @@ if __name__ == '__main__':
         os.system(cmd)
 
         of = open(output_file, "r")
-        outputs = of.read().strip()
+        outputs = of.read().strip().split()
         try:
             cf = open(correct_file, "r")
-            correct = cf.read().strip()
+            correct = cf.read().strip().split()
         except:
-            print("Your output : ")
-            print("".join(outputs))
+            print_("Your output : ")
+            print_("".join(outputs))
             of.close()
             continue
 
@@ -40,20 +47,21 @@ if __name__ == '__main__':
         of.close()
 
         if correct != outputs:
-            print("\nWA on input file", fname)
-            print("Input given : ")
+            print_("\nWA on input file", fname)
+            print_("Input given : ")
             with open(fname, "r") as f:
-                print(f.read())
-            print("\nCorrect output : ")
-            print("".join(correct))
-            print("Your output : ")
-            print("".join(outputs))
+                print_(f.read())
+            print_("\nCorrect output : ")
+            print_("".join(correct))
+            print_("Your output : ")
+            print_("".join(outputs))
             good = False
-            print("\nError/Debug Statements:")
+            print_("\nError/Debug Statements:")
             with open(error_file, "r") as f:
-                print(f.read())
+                print_(f.read())
         else:
-            print(fname, "OK !")
+            print_(fname, "OK !")
 
     if good:
-        print("\n\nAll tests Passed !")
+        print_("\n\nAll tests Passed !")
+    run_op.close()

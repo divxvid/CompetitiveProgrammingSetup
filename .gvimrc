@@ -29,13 +29,14 @@ set linebreak " Wrap lines when convenient
 :nmap \p :set paste!<CR>
 :nmap j gj
 :nmap k gk
+:inoremap {<CR> {<CR>}<Esc>ko
+:inoremap {} {}
 
 call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'
 Plug 'https://github.com/morhetz/gruvbox'
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'https://github.com/herrbischoff/cobalt2.vim'
-Plug 'https://github.com/SirVer/ultisnips'
 call plug#end()
 
 "colorscheme gruvbox
@@ -44,7 +45,6 @@ colorscheme cobalt2
 "set guifont=Fira\ Code\ SemiBold:h13
 set guifont=Cascadia\ Code\ SemiBold:h14
 set background=dark
-
 "Below two lines will enable font ligatures.
 "set renderoptions=type:directx
 "set encoding=utf-8
@@ -65,3 +65,4 @@ nmap <F4> :!python D:\Coding\CompetitiveProgrammingSetup\CompetitiveCompanion\co
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
