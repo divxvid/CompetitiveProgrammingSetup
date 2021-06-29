@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
-#define all(x) x.begin(), x.end()
+#define all(x) (x).begin(), (x).end()
 #define pb push_back
 #define eb emplace_back
 #define mp make_pair
-#define sz(x) x.size()
+#define sz(x) ((int)(x.size()))
 
 using namespace std ;
 
