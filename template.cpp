@@ -6,6 +6,20 @@
 #define sz(x) ((int)(x.size()))
 
 using namespace std ;
+/*
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+  
+
+// For multiset just add a counter with it's value increasing with each insert.
+// for finding fix the counter value to 0.
+// For Ordered map just add data type in place of null_type
+#define ordered_multiset tree<pair<int, int>, null_type, less<pair<int, int>>, rb_tree_tag,tree_order_statistics_node_update>
+#define ordered_set tree<int, null_type, less<int>, rb_tree_tag,tree_order_statistics_node_update>
+
+//useful functions : order_of_key(key), find_by_order(order)
+*/
 
 void __print(int x) {cerr << x;}
 void __print(long x) {cerr << x;}
